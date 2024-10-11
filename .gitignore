@@ -31,3 +31,10 @@ logs/*
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Pictures
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
