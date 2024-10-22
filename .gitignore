@@ -38,3 +38,11 @@ Thumbs.db
 *.jpeg
 *.gif
 *.svg
+
+# Tensorflow models
+*.pb
+*.pbtxt
+*.keras
+
+# CSV files
+*.csv
