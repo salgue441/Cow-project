@@ -1,114 +1,135 @@
 import os
+import shutil
 import random
-from typing import List, Dict, Tuple
-from pathlib import Path
 from collections import defaultdict
+from typing import Dict, List, Tuple, Optional
 
 
-def stratified_division(
-    directory: Path,
-    train_ratio: float = 0.8,
-    val_ratio: float = 0.10,
-    test_ratio: float = 0.10,
-) -> Dict[str, List[Path]]:
+def stratified_directory_split(
+    source_dir: str,
+    outputs_dir: Dict[str, str],
+    split_ratios: Dict[str, float],
+    stratify_by_subdirs: bool = True,
+    random_seed: Optional[int] = None,
+) -> Dict[str, Dict[str, int]]:
     """
-    Perform stratified division on files in the given directory.
+    Split files from a source directory into multiple output directories while
+    mantaining stratification.
 
     Args:
-      directory (Path): The directory containing the files to divide.
-      train_ratio (float): The ratio of the training set.
-      val_ratio (float): The ratio of the validation set.
-      test_ratio (float): The ratio of the test set.
+      source_dir: The directory to split.
+      outputs_dir: Dictionary with the output directories.
+      split_ratios: Dictionary with the split ratios.
+      stratify_by_subdirs: If True, the function will stratify the files by
+        subdirectories.
+      random_seed: Random seed for reproducibility.
 
     Returns:
-      Dict[str, List[Path]]: A dictionary containing the file paths for each set.
+      Dictionary containing statistics and the split for each category
     """
 
-    if abs(train_ratio + val_ratio + test_ratio - 1.0) > 1e-10:
-        raise ValueError("Sum of ratios must be equal to 1.")
+    if random_seed is not None:
+        random.seed(random_seed)
 
-    result: Dict[str, List[Path]] = {"train": [], "val": [], "test": []}
-    for class_dir in directory.iterdir():
-        if not class_dir.is_dir():
-            continue
+    if abs(sum(split_ratios.values()) - 1.0) > 1e-9:
+        raise ValueError("The split ratios must sum to 1.0")
 
-        class_files = list(class_dir.glob("*.jpg"))
-        random.shuffle(class_files)
+    for output_dir in outputs_dir.values():
+        os.makedirs(output_dir, exist_ok=True)
 
-        n_files = len(class_files)
-        n_train = int(n_files * train_ratio)
-        n_val = int(n_files * val_ratio)
-        n_test = n_files - n_train - n_val
+    print(f"\nScanning source directory: {source_dir}")
 
-        if n_train == 0 or n_val == 0 or n_test == 0:
-            raise ValueError("Invalid ratio values.")
+    files_by_category = defaultdict(list)
+    total_files_found = 0
 
-        result["train"].extend(class_files[:n_train])
-        result["val"].extend(class_files[n_train : n_train + n_val])
-        result["test"].extend(class_files[n_train + n_val :])
+    for category in sorted(os.listdir(source_dir)):
+        category_path = os.path.join(source_dir, category)
 
-    return result
+        if os.path.isdir(category_path):
+            print(f"Processing category: {category}")
 
+            for root, _, files in os.walk(category_path):
+                for file in files:
+                    file_path = os.path.join(root, file)
+                    files_by_category[category].append(file_path)
+                    total_files_found += 1
 
-def print_class_distribution(split_name: str, files: List[Path]):
-    class_count = defaultdict(int)
+    print(f"\nTotal files found: {total_files_found}")
+    print(f"\nFiles by category: ")
+    for category, files in files_by_category.items():
+        print(f"Category {category}: {len(files)} files")
 
-    for file in files:
-        class_name = file.parent.name
-        class_count[class_name] += 1
+    split_stats = {split_name: defaultdict(int) for split_name in outputs_dir.keys()}
 
-    print(f"\n{split_name.capitalize()} set distribution:")
-    for class_name, count in class_count.items():
-        print(f"Class {class_name}: {count} files")
+    # processing each category
+    for category, files in files_by_category.items():
+        print(f"\nSplitting category {category} with {len(files)} files")
+        random.shuffle(files)
 
+        total_files = len(files)
+        split_sizes = {}
+        cumulative = 0
 
-def main():
-    import argparse
+        for split_name, ratio in split_ratios.items():
+            if split_name == list(split_ratios.keys())[-1]:
+                split_sizes[split_name] = total_files - cumulative
 
-    parser = argparse.ArgumentParser(
-        description="Perform stratified division on files in the given directory."
-    )
+            else:
+                size = int(total_files * ratio)
+                split_sizes[split_name] = size
+                cumulative += size
 
-    parser.add_argument(
-        "directory", type=Path, help="Path to the directory containing the files."
-    )
+        print(f"Split sizes for category {category}: {split_sizes}")
 
-    parser.add_argument(
-        "--train",
-        type=float,
-        default=0.8,
-        help="The ratio of the training set.",
-    )
+        start_idx = 0
+        for split_name, size in split_sizes.items():
+            split_files = files[start_idx : start_idx + size]
+            output_dir = outputs_dir[split_name]
 
-    parser.add_argument(
-        "--val",
-        type=float,
-        default=0.10,
-        help="The ratio of the validation set.",
-    )
+            for file_path in split_files:
+                rel_path = os.path.relpath(file_path, source_dir)
+                dest_path = os.path.join(output_dir, rel_path)
 
-    parser.add_argument(
-        "--test",
-        type=float,
-        default=0.10,
-        help="The ratio of the test set.",
-    )
+                os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+                shutil.copy2(file_path, dest_path)
+                split_stats[split_name][category] += 1
 
-    args = parser.parse_args()
+            start_idx += size
 
-    try:
-        result = stratified_division(args.directory, args.train, args.val, args.test)
+        print("\nFinal split statistics:")
+        for split_name, categories in split_stats.items():
+            total = sum(categories.values())
+            print(f"\n{split_name}:")
 
-        for split, files in result.items():
-            print(f"{split.capitalize()} set: {len(files)} files")
-            print_class_distribution(split, files)
+            for category, count in categories.items():
+                print(f"  Category {category}: {count} files")
 
-    except ValueError as e:
-        print(e)
+            print(f"  Total: {total} files")
 
-    except FileNotFoundError as e:
-        print(e)
+        return split_stats
 
 
-if __name__ == "__main__":
-    main()
+source = "../../data/processed/labeled"
+output_dirs = {
+    "train": "../../data/processed/split/train",
+    "val": "../../data/processed/split/val",
+    "test": "../../data/processed/split/test",
+}
+
+split_ratios = {
+    "train": 0.80,
+    "val": 0.10,
+    "test": 0.10,
+}
+
+print("Starting directory split...")
+print(f"Source directory: {os.path.abspath(source)}")
+print(f"Output directories: {output_dirs}")
+print(f"Split ratios: {split_ratios}")
+
+stats = stratified_directory_split(
+    source_dir=source,
+    outputs_dir=output_dirs,
+    split_ratios=split_ratios,
+    random_seed=42,
+)
