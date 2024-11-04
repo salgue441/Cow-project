@@ -64,6 +64,13 @@
     "shared_mutex": "cpp",
     "stop_token": "cpp",
     "thread": "cpp",
-    "cfenv": "cpp"
+    "cfenv": "cpp",
+    "bitset": "cpp",
+    "charconv": "cpp",
+    "regex": "cpp",
+    "span": "cpp",
+    "variant": "cpp",
+    "format": "cpp",
+    "__nullptr": "cpp"
   }
 }
