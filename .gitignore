@@ -12,9 +12,7 @@ venv/
 env/
 
 # Data
-data/raw/*
-data/processed/*
-data/external/*
+data/*
 
 # Models
 models/*
@@ -31,13 +29,6 @@ logs/*
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-# Pictures
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.svg
 
 # Tensorflow models
 *.pb
