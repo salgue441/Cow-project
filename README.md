@@ -1,55 +1,50 @@
-# Cow classification project
+# CAETEC ~ Cow Queue Analysis
 
-## Introduction
+Automated cow detection and counting system for dairy farm queue monitoring using computer vision, with snapshots taken at 5-minute intervals.
 
-## Pre-requisites
+![banner](readme/images/banner.jpg)
 
-- Docker
-- Docker compose
-- Python 3.11
-- Pyspark
+## 🎯 Overview
 
-## Getting started
+This project implements an automated cow counting system using YOLOv8 object detection to monitor milking queue occupancy in dairy farms. The system:
 
-1. Clone the repository
+- Processes images captured every 5 minutes by a camera installed at the milking queue.
+- Detects individual cows using bounding boxes.
+- Mantains a time-series log of queue occupancy.
+- Provides insights into queue patterns throughout the day.
 
-```bash
-git clone git@github.com:salgue441/cow-project.git
-cd cow-project
+## ⭐ Highlights
+
+- **Automated Monitoring**: captures queue images every 5 minutes.
+- **Precise Detection**: 95% accuracy in cow counting using YOLOv8.
+
+## 📊 Key Metrics
+
+| Metric               | Value         |
+| -------------------- | ------------- |
+| Average precision    | 0.91          |
+| Queue Count Accuracy | 95%           |
+| Processing time      | <3s per image |
+| Monitoring interval  | 5 minutes     |
+
+## 🔬 Technical Stack
+
+- **CV Framework**: YOLOv8 for object detection
+- **Deployment**: Docker containerized
+- **Storage**: AWS S3 for image storage
+
+## 📁 Project Overview
+
+```{bash}
+notebooks/
+├── yolo/              # 🌟 Production YOLOv8 Implementation
+├── previous_models/   # Model Experiments
+└── exploratory/       # Data Investigation
 ```
 
-2. Build the docker image
+## 📚 Documentation
 
-```bash
-docker-compose build
-```
-
-3. Start the spark cluster and ML application
-
-```bash
-docker-compose up
-```
-
-## Usage
-
-The ML application will automatically start training when you run `docker-compose up`. You can modify the entry point in the `docker-compose.yml` file to run different scripts or Jupyter notebooks. To access the Spark UI, navigate to `http://localhost:8080` in your web browser.
-
-## Development
-
-1. Make changes to the code in the `src/` directory.
-2. Update tests in the `tests/` directory as needed.
-3. Run tests locally:
-
-```bash
-docker-compose run ml-application python -m unittest discover tests
-```
-
-4. Commit your changes and push to GitHub. The CI/CD pipeline will run tests and linting automatically.
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+- Installation guide
+- Development guide
+- Model training
+- System architecture
