@@ -1,0 +1,41 @@
+name: Lint Code Base
+on:
+  push:
+    branches: [main]
+
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install black flake8 nbqa isort
+
+      - name: Run Black on Python files
+        run: black --check .
+
+      - name: Run Black on Jupyter notebooks
+        run: nbqa black .
+
+      - name: Run Flake8
+        run: |
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=88 --statistics
+
+      - name: Run isort
+        run: |
+          isort . --check-only --profile black
+          nbqa isort . --check-only --profile black
+
+      - name: Check Jupyter notebook metadata
+        run: |
+          find . -name "*.ipynb" -not -path "*/\.*" -exec nbqa remove-cell-metadata {} \;
