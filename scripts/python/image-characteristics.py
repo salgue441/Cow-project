@@ -1,8 +1,9 @@
-import os
 import csv
+import os
+from datetime import datetime
+
 import numpy as np
 from PIL import Image
-from datetime import datetime
 
 
 def extract_characteristics(directory_path, output_filename):
