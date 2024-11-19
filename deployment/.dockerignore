@@ -1,0 +1,59 @@
+# Python virtual environment
+.venv/
+venv/
+ENV/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Development and IDE files
+.git
+.gitignore
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Environment files
+.env
+.env.local
+*.env
+
+# Log files
+*.log
+logs/
+log/
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# Test files
+tests/
+test/
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+
+# Local development files
+*.ipynb
+.ipynb_checkpoints
+*.pkl
+
+# Don't ignore your model files
+!models/*.pt
+
+# Temporary files
+tmp/
+temp/
