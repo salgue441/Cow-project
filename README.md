@@ -36,10 +36,22 @@ This project implements an automated cow counting system using YOLOv8 object det
 ## 📁 Project Overview
 
 ```{bash}
+docs/
+├── README.md          # Project Overview
+├── CRISP-DM/
+│   ├── Business Understanding/
+│   ├── Data Understanding/
+│   ├── Data Preparation/
+│   ├── Modeling/
+│   ├── Evaluation/
+│   └── Deployment/
+deploy/
+├── Dockerfile         # Docker Configuration
+├── requirements.txt   # Python Dependencies
 notebooks/
 ├── yolo/              # 🌟 Production YOLOv8 Implementation
-├── previous_models/   # Model Experiments
-└── exploratory/       # Data Investigation
+├── research/          # Model Experiments
+└── analysis/          # Data Investigation
 ```
 
 ## 📚 Documentation

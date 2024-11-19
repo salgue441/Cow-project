@@ -1,12 +1,12 @@
 task: detect
 mode: train
-model: yolov8n.pt
-data: ../../data/yolo/data.yaml
-epochs: 100
+model: yolov8x.pt
+data: /home/carlos/developer/cow-project/data/yolo/data.yaml
+epochs: 50
 time: null
 patience: 20
-batch: 32
-imgsz: 640
+batch: 16
+imgsz: 320
 save: true
 save_period: -1
 cache: false
@@ -32,7 +32,7 @@ freeze: null
 multi_scale: false
 overlap_mask: true
 mask_ratio: 4
-dropout: 0.0
+dropout: 0.2
 val: true
 split: val
 save_json: false
@@ -47,7 +47,7 @@ source: null
 vid_stride: 1
 stream_buffer: false
 visualize: false
-augment: false
+augment: true
 agnostic_nms: false
 classes: null
 retina_masks: false
@@ -96,8 +96,8 @@ flipud: 0.0
 fliplr: 0.5
 bgr: 0.0
 mosaic: 1.0
-mixup: 0.0
-copy_paste: 0.0
+mixup: 0.3
+copy_paste: 0.3
 copy_paste_mode: flip
 auto_augment: randaugment
 erasing: 0.4

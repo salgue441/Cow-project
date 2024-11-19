@@ -16,6 +16,12 @@ data/*
 
 # Models
 models/*
+models/*/*
+/*/models/*
+
+# Outputs
+notebooks/yolo/outputs_inference/*
+notebooks/yolo/runs/detect/train/weights/*
 
 # Logs
 logs/*
@@ -35,7 +41,9 @@ Thumbs.db
 *.pbtxt
 *.keras
 
+# Pytorch models
+*.pt
+
 # CSV files
 *.csv
-
 .venv
