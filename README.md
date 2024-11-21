@@ -69,7 +69,7 @@ notebooks/
 
 ## Competencias 
 
-Aquí te preparo una tabla en formato Markdown para tu README que organiza las competencias por tipo y permite agregar enlaces a los entregables:
+Para cualquier link dentro de los pdf sera requerido descargar el pdf para acceder a ese link
 
 | Tipo | Competencia | Evidencia |
 |------|-------------|-----------|
