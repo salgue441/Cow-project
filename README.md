@@ -77,10 +77,5 @@ Aquí te preparo una tabla en formato Markdown para tu README que organiza las c
 | **Modelo** | Emplea arquitecturas del estado de arte deep learning como parte de la solución del reto | [[10]Modeling V](CRISP-DM/[10]%20Modeling%20V.pdf)|
 | **Modelo** | Elabora un modelo benchmark (regresión lineal, logística o un modelo arima) para la evaluación de la solución y explica detalladamente la forma en la que se genera el modelo | [[10]Modeling V](CRISP-DM/[10]%20Modeling%20V.pdf)|
 | **Refinamiento** | Refina el modelo después de su primera iteración para mejorar su desempeño | [[10]Modeling V](CRISP-DM/[10]%20Modeling%20V.pdf.pdf)|
-| **Refinamiento** | Prueba con otras arquitecturas (además del benchmark) para ver si obtiene mejores rendimientos |[[04]Modeling I](CRISP-DM/[04]%20Modeling%20I.pdf)
-[[06]Modeling II](CRISP-DM/[06]%20Modeling%20II.pdf)
-[[07]Modeling III](CRISP-DM/[07]%20Modeling%20III.pdf)
-[[08]Modeling IV](CRISP-DM/[08]%20Modeling%20IV.pdf)
-[[09]Data Preparation III](CRISP-DM/[09]%20Data%20Preparation%20III.pdf)
-[[10]Modeling V](CRISP-DM/[10]%20Modeling%20V.pdf)|
+| **Refinamiento** | Prueba con otras arquitecturas (además del benchmark) para ver si obtiene mejores rendimientos |[[04]Modeling I](CRISP-DM/[04]%20Modeling%20I.pdf) [[06]Modeling II](CRISP-DM/[06]%20Modeling%20II.pdf) [[07]Modeling III](CRISP-DM/[07]%20Modeling%20III.pdf) [[08]Modeling IV](CRISP-DM/[08]%20Modeling%20IV.pdf) [[10]Modeling V](CRISP-DM/[10]%20Modeling%20V.pdf)|
 
