@@ -41,8 +41,14 @@ docs/
 ├── CRISP-DM/
 │   ├── Business Understanding/
 │   ├── Data Understanding/
-│   ├── Data Preparation/
-│   ├── Modeling/
+│   ├── Data Preparation I/
+│   ├── Modeling I/
+│   ├── Data Preparation II/
+│   ├── Modeling II/
+│   ├── Modeling III/
+│   ├── Modeling IV/
+│   ├── Data Preparation III/
+│   ├── Modeling V/
 │   ├── Evaluation/
 │   └── Deployment/
 deploy/
