@@ -73,9 +73,9 @@ Para cualquier link dentro de los pdf sera requerido descargar el pdf para acced
 
 | Tipo | Competencia | Evidencia |
 |------|-------------|-----------|
-| **Modelo** | Selecciona un modelo adecuado al problema presentado en el reto | [[10]Modeling V](CRISP-DM/[10]%20Modeling%20V.pdf) |
-| **Modelo** | Emplea arquitecturas del estado de arte deep learning como parte de la solución del reto | [[10]Modeling V](CRISP-DM/[10]%20Modeling%20V.pdf)|
+| **Modelo** | Selecciona un modelo adecuado al problema presentado en el reto | Sección 3 de [[10]Modeling V](CRISP-DM/[10]%20Modeling%20V.pdf) |
+| **Modelo** | Emplea arquitecturas del estado de arte deep learning como parte de la solución del reto | Empleamos varias arquitecturas para solucionar el reto [[[04]Modeling I](CRISP-DM/[04]%20Modeling%20I.pdf) [[06]Modeling II](CRISP-DM/[06]%20Modeling%20II.pdf) [[07]Modeling III](CRISP-DM/[07]%20Modeling%20III.pdf) [[08]Modeling IV](CRISP-DM/[08]%20Modeling%20IV.pdf)[[10]Modeling V](CRISP-DM/[10]%20Modeling%20V.pdf)|
 | **Modelo** | Elabora un modelo benchmark (regresión lineal, logística o un modelo arima) para la evaluación de la solución y explica detalladamente la forma en la que se genera el modelo | Sección 4 de [[10]Modeling V](CRISP-DM/[10]%20Modeling%20V.pdf)|
 | **Refinamiento** | Refina el modelo después de su primera iteración para mejorar su desempeño | Sección 7 de [[10]Modeling V](CRISP-DM/[10]%20Modeling%20V.pdf) |
-| **Refinamiento** | Prueba con otras arquitecturas (además del benchmark) para ver si obtiene mejores rendimientos | Se probaron con multiples arquitecturas. [[04]Modeling I](CRISP-DM/[04]%20Modeling%20I.pdf) [[06]Modeling II](CRISP-DM/[06]%20Modeling%20II.pdf) [[07]Modeling III](CRISP-DM/[07]%20Modeling%20III.pdf) [[08]Modeling IV](CRISP-DM/[08]%20Modeling%20IV.pdf) [[10]Modeling V](CRISP-DM/[10]%20Modeling%20V.pdf)|
+| **Refinamiento** | Prueba con otras arquitecturas (además del benchmark) para ver si obtiene mejores rendimientos | Se probaron con multiples arquitecturas. [[04]Modeling I](CRISP-DM/[04]%20Modeling%20I.pdf) [[06]Modeling II](CRISP-DM/[06]%20Modeling%20II.pdf) [[07]Modeling III](CRISP-DM/[07]%20Modeling%20III.pdf) [[08]Modeling IV](CRISP-DM/[08]%20Modeling%20IV.pdf) Y despues del benchmark se probo con otra arquitectura para ver si obteniamos mejores rendimientos el cual esta en la sección 7 [[10]Modeling V](CRISP-DM/[10]%20Modeling%20V.pdf)|
 
