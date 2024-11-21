@@ -66,3 +66,19 @@ notebooks/
 - Development guide
 - Model training
 - System architecture
+
+## Competencias 
+
+Aquí te preparo una tabla en formato Markdown para tu README que organiza las competencias por tipo y permite agregar enlaces a los entregables:
+
+| Tipo | Competencia | Evidencia |
+|------|-------------|-----------|
+| **Modelo** | Selecciona un modelo adecuado al problema presentado en el reto | [[10]Modeling V](CRISP-DM) |
+| **Modelo** | Emplea arquitecturas del estado de arte deep learning como parte de la solución del reto | |
+| **Modelo** | Elabora un modelo benchmark (regresión lineal, logística o un modelo arima) para la evaluación de la solución y explica detalladamente la forma en la que se genera el modelo | |
+| **Evaluación** | Plantea pruebas del estado del arte respaldadas en la literatura, que sean válidas y relevantes en el contexto del reto | |
+| **Evaluación** | Selecciona métricas (o indicadores de desempeño) adecuadas tanto para el modelo como para el reto | |
+| **Evaluación** | Interpreta los resultados del modelo de manera correcta | |
+| **Refinamiento** | Refina el modelo después de su primera iteración para mejorar su desempeño | |
+| **Refinamiento** | Prueba con otras arquitecturas (además del benchmark) para ver si obtiene mejores rendimientos | |
+
