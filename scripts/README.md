@@ -9,16 +9,16 @@ Python data analysis, and shell scripts for dataset organization.
 ## 📁 Project Structure
 
 ```bash
-├── cpp/              # High-performance C++ utilities
+├── cpp/                           # High-performance C++ utilities
 │   ├── dataset-division.cpp       # Divide dataset into train, test, and validation
 │   ├── image_sorter               # Tool for sorting images (details TBD)
 │   └── night-day-classifier.cpp   # Classify dataset into day and night categories
-├── python/           # Python scripts for analysis
+├── python/                        # Python scripts for analysis
 │   └── image-characteristics.py   # Extract metadata for further analysis (e.g., Tableau)
-├── shell/            # Shell scripts for dataset preprocessing
-    ├── division.sh               # Split raw dataset into subsets by persons
-    ├── persons.txt               # List of persons for splitting
-    └── unique.sh                 # Separate dataset for unique individuals
+├── shell/                         # Shell scripts for dataset preprocessing
+    ├── division.sh                # Split raw dataset into subsets by persons
+    ├── persons.txt                # List of persons for splitting
+    └── unique.sh                  # Separate dataset for unique individuals
 ```
 
 ## ⚡ Features
