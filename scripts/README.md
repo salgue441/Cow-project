@@ -60,7 +60,7 @@ pip install -r requirements.txt
 
 1. Compile
 
-````bash
+```bash
 g++ -std=c++17 dataset-division.cpp -o dataset-division
 g++ -std=c++17 night-day-classifier.cpp -o image_sorter -pthread -static-libstdc++ -static-libgcc
 ```
@@ -70,7 +70,7 @@ g++ -std=c++17 night-day-classifier.cpp -o image_sorter -pthread -static-libstdc
 ```bash
 ./dataset-division
 ./night-day-classifier
-````
+```
 
 ### Python
 
