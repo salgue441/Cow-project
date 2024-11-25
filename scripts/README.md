@@ -60,9 +60,9 @@ pip install -r requirements.txt
 
 1. Compile
 
-```bash
-g++ -pthread dataset-division.cpp -o dataset-division
-g++ -pthread night-day-classifier.cpp -o night-day-classifier
+````bash
+g++ -std=c++17 dataset-division.cpp -o dataset-division
+g++ -std=c++17 night-day-classifier.cpp -o image_sorter -pthread -static-libstdc++ -static-libgcc
 ```
 
 2. Run:
@@ -70,13 +70,13 @@ g++ -pthread night-day-classifier.cpp -o night-day-classifier
 ```bash
 ./dataset-division
 ./night-day-classifier
-```
+````
 
 ### Python
 
 Run the python script directly
 
-```
+```bash
 python3 image-characteristics.py
 ```
 
