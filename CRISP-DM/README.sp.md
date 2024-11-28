@@ -31,19 +31,19 @@ La documentación del proyecto está organizada en fases secuenciales siguiendo 
    - Optimización de parámetros
    - Análisis de resultados
 
-## 🎯 Competencias Clave
-
-## Competencias
-
-Para cualquier link dentro de los pdf sera requerido descargar el pdf para acceder a ese link
-
-| Tipo             | Competencia                                                                                                                                                                   | Evidencia                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Modelo**       | Selecciona un modelo adecuado al problema presentado en el reto                                                                                                               | Sección 3 de [[10]Modeling V](./[10]%20Modeling%20V.pdf)                                                                                                                                                                                                                                                                                                                                                     |
-| **Modelo**       | Emplea arquitecturas del estado de arte deep learning como parte de la solución del reto                                                                                      | Empleamos varias arquitecturas para solucionar el reto [[04]Modeling I](./[04]%20Modeling%20I.pdf) [[06]Modeling II](./[06]%20Modeling%20II.pdf) [[07]Modeling III](./[07]%20Modeling%20III.pdf) [[08]Modeling IV](./[08]%20Modeling%20IV.pdf)[[10]Modeling V](./[10]%20Modeling%20V.pdf)                                                                                                                    |
-| **Modelo**       | Elabora un modelo benchmark (regresión lineal, logística o un modelo arima) para la evaluación de la solución y explica detalladamente la forma en la que se genera el modelo | Sección 4 de [[10]Modeling V](./[10]%20Modeling%20V.pdf)                                                                                                                                                                                                                                                                                                                                                     |
-| **Refinamiento** | Refina el modelo después de su primera iteración para mejorar su desempeño                                                                                                    | Sección 7 de [[10]Modeling V](./[10]%20Modeling%20V.pdf)                                                                                                                                                                                                                                                                                                                                                     |
-| **Refinamiento** | Prueba con otras arquitecturas (además del benchmark) para ver si obtiene mejores rendimientos                                                                                | Se probaron con multiples arquitecturas. [[04]Modeling I](./[04]%20Modeling%20I.pdf) [[06]Modeling II](./[06]%20Modeling%20II.pdf) [[07]Modeling III](./[07]%20Modeling%20III.pdf) [[08]Modeling IV](./[08]%20Modeling%20IV.pdf) Y despues del benchmark se probo con otra arquitectura para ver si obteniamos mejores rendimientos el cual esta en la sección 7 [[10]Modeling V](./[10]%20Modeling%20V.pdf) |
+5. **[Evaluación](./[11]%Evaluation.pdf)**:
+- Evaluar los resultados obtenidos
+- Obtener los modelos aprobados
+- Validar el objetivo de negocio
+- Revisión de procesos
+- Analizar pasos siguientes y tomar una decisión
+  
+6. **[Entrega](./[12]%Deployment.pdf)**
+- Plan de Entrega
+- Plan de Mantenimiento
+- Reportes Finales
+- Presentación Final
+- Entregar los resultados
 
 ## 📝 Nota
 
