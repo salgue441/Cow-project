@@ -31,3 +31,22 @@ The project documentation is organized into sequential phases following the CRIS
    - Parameter optimization
    - Results analysis
 
+5. **[Evaluation](./[11]%20Evaluation.pdf)**:
+   - Evaluate the results
+   - Obtain the approved models
+   - Validate the business objective
+   - Review the process
+   - Analyze the next steps and make a decision
+  
+6. **[Deployment](./[12]%20Deployment.pdf)**:
+   - Deployment Plan
+   - Monitoring Plan
+   - Final Reports
+   - Final Presentation
+   - Deliver results
+
+## 📝 Note
+
+To access the links inside the PDF, please download the archives locally.
+
+
