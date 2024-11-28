@@ -36,6 +36,7 @@ This project implements an automated cow counting system using YOLOv8 object det
 1. Clone the repository
 2. Follow the deployment guide in `deployment/README.md`
 3. For development details, see `CRISP-DM/README.md`
+4. Deployment repo: [Cow Cattle Classification](https://github.com/salgue441/caetec-cow-classification)
 
 ## 📫 Contact
 
