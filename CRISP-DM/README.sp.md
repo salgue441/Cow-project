@@ -18,7 +18,7 @@ La documentación del proyecto está organizada en fases secuenciales siguiendo 
    - Evaluación de calidad de datos
    - Insights iniciales
 
-3. **[Preparación de los Datos](./[03]%20Data%20Preparation%20I.pdf)**
+3. **[Preparación de los Datos](./[03]%20Data%20Preparation%20I.pdf)**:
    - Archivos: Data Preparation I - III
    - Limpieza de datos
    - Ingeniería de características
@@ -38,7 +38,7 @@ La documentación del proyecto está organizada en fases secuenciales siguiendo 
    - Revisión de procesos
    - Analizar pasos siguientes y tomar una decisión
   
-6. **[Entrega](./[12]%20Deployment.pdf)**
+6. **[Entrega](./[12]%20Deployment.pdf)**:
    - Plan de Entrega
    - Plan de Mantenimiento
    - Reportes Finales
