@@ -25,6 +25,7 @@ AWS_ACCESS_KEY_ID=tu_access_key
 AWS_SECRET_ACCESS_KEY=tu_secret_key
 AWS_REGION=tu_region
 S3_BUCKET_NAME=tu_bucket
+CAMERA_TIME=time_between_photos
 ```
 
 ### Requerimientos de Hardware
